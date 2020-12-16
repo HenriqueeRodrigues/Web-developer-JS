@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button">Não Clique</button>
+    <button type="button" id="pode">Clique</button> **para o segundo ex**
+    <script>
+      /*const botão = document.querySelector("button");
+      botão.addEventListener("dblclick", () => { // o event listener não funciona a chamar uma coleção ou o queryselectorall
+        console.log("Falei para não clicar!! 🤣"); //windows + . abre a tela de emotions
+      });*/
+
+      /*const botoes = document.querySelectorAll("button");
+      [...botoes].forEach((botao) => {
+        botao.addEventListener("dblclick", () => {
+          // o event listener não funciona a chamar uma coleção ou o queryselectorall
+          console.log("Falei para não clicar!! 🤣"); //windows + . abre a tela de emotions
+        });
+      });*/
+
+      const botoes = document.querySelectorAll("button");
+      [...botoes].forEach((botao) => {
+        botao.addEventListener("click", (evento) => {
+          switch (evento.target.id) {
+            case "pode":
+              console.log("😘");
+              break;
+            default:
+              defaultStatus;
+              console.log("Falei para não clicar!! 🤣");
+          }
+
+          console.log(evento);
+        });
+      });
+    </script>
+  </body>
+</html>

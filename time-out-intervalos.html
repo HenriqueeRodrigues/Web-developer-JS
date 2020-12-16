@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>0</h1>
+    <button type="button" id="a">Desligar Interval</button>
+    <button type="button" id="b">Desligar Time Out</button>
+    <script>
+      let contador = 0;
+
+      const idInterval = setInterval(() => {
+        console.log(++contador);
+        document.querySelector("h1").innerHTML = contador; // aparecer no h1 la emcima no html
+      }, 1000); //intervalo de uma executar cada função
+
+      document
+        .querySelector("button#a")
+        .addEventListener("click", () => clearInterval(idInterval));
+
+      const idTimeout = setTimeout(() => {
+        console.log("Seja bem-vindo");
+        document.querySelector("h1").style.color = "red"; // mudar a cor para vermelho a cada 5 seconds
+        clearInterval(idInterval);
+      }, 10000); //tempo para iniciar a função
+      document
+        .querySelector("button#b")
+        .addEventListener("click", () => clearTimeout(idTimeout));
+    </script>
+  </body>
+</html>

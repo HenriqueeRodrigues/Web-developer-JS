@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+      }
+      #caixa {
+        background-color: red;
+      }
+      #caixa2 {
+        background-color: brown;
+      }
+      .nota-verde {
+        color: rgb(0, 255, 0);
+      }
+      .nota-vermelha {
+        color: rgb(255, 0, 0);
+      }
+    </style>
+  </head>
+  <body class="vermelho">
+    <div id="caixa"></div>
+    <div id="caixa2"></div>
+    <h2>
+      Você realizou a prova do Hcode Lab, seu aproveitamento foi:
+      <span> 70%</span>
+    </h2>
+    <form>
+      <input type="text" name="nome" id="nome" />
+      <button type="button">ENVIAR</button>
+    </form>
+    <script>
+      /*
+      console.dir((document.body.children[0].style.backgroundColor = "green"));
+
+      console.log(document.getElementById("caixa"));
+      console.log(document.getElementsByTagName("div"));
+      console.log(document.getElementsByClassName("vermelho")[0]); //parentes para acessar o indice ou a posição
+      console.log(document.querySelector("body")); // tag
+      console.log(document.querySelector("#caixa")); //id
+      console.log(document.querySelector(".caixa")); //class
+      console.log(document.querySelectorAll("div")); //varios resultados. uma coleção de elementos
+    */
+
+      const nota = 40;
+
+      const tagSpan = document.querySelector("h2 span");
+      tagSpan.innerHTML = `${nota}%`;
+
+      tagSpan.className = nota >= 70 ? "nota-vermelha" : "nota-verde";
+
+      //mesmo codigo so que em cima usando o codigo ternario,
+
+      /* if (nota >= 70) {
+        tagSpan.className = "nota-verde";
+      } else {
+        tagSpan.className = "nota-vermelha";
+      }*/
+    </script>
+  </body>
+</html>

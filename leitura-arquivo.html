@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script></script>
+  </head>
+  <body>
+    <h1>Formulário de cadastro</h1>
+    <h4 id="boas-vindas"></h4>
+
+    <form onsubmit="pegarDados(event)">
+      <label for="nome">Digite seu nome</label>
+      <input type="text" name="nome" id="nome" />
+
+      <label for="nome">Digite seu e-mail</label>
+      <input type="email" name="email" id="email" />
+
+      <label for="nome">Digite sua senha</label>
+      <input type="password" name="senha" id="senha" />
+
+      <input
+        type="file"
+        name="arquivo"
+        id="arquivo"
+        accept="image/*"
+        onchange="lerArquivo()"
+      />
+      <img src="" id="imagem" />
+
+      <button type="submite">Enviar</button>
+    </form>
+    <script src="formularios.js">
+      /*function lerArquivo() {
+        const input = document.querySelector("#arquivo"); //localizao o arquivo
+        const { files } = input; //acessar files ou seja aqui um destruct tirando o files do input separando ele.
+
+        if (files.length) {
+          const file = files[0]; // se la tiver mais que 0, pegue 1 arquivo que esta no indice 0
+          const leitor = new FileReader(); // classe nativa do JS leitor de arquivo
+          leitor.onloadend = () => {
+            //quando terminar ou carregar os dados do aquivo executa a função abaixo
+            document.querySelector("#imagem").src = leitor.result; //vai colocar la em cima no id imagem no src do id imagem pg 34
+          };
+          leitor.readAsDataURL(file); //ler arquivo em URL de dadps
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button">Não Clique</button>
+    <button type="button" id="pode">Clique</button> **para o segundo ex**
+    <script>
+      /*const botão = document.querySelector("button");
+      botão.addEventListener("dblclick", () => { // o event listener não funciona a chamar uma coleção ou o queryselectorall
+        console.log("Falei para não clicar!! 🤣"); //windows + . abre a tela de emotions
+      });*/
+
+      /*const botoes = document.querySelectorAll("button");
+      [...botoes].forEach((botao) => {
+        botao.addEventListener("dblclick", () => {
+          // o event listener não funciona a chamar uma coleção ou o queryselectorall
+          console.log("Falei para não clicar!! 🤣"); //windows + . abre a tela de emotions
+        });
+      });*/
+
+      /* window.addEventListener("load", () => {
+        console.log("window", "load");
+      });
+
+      window.addEventListener("resize", (evento) => {
+        console.log(window.innerWidth);
+        console.log(window.outerWidth);
+      });
+
+      window.addEventListener("focus", () => {
+        console.log("Voce está na janela!!");
+      });
+      window.addEventListener("blur", () => {
+        console.log("Voce saiu da janela!!");
+      });
+      */
+
+      const botoes = document.querySelectorAll("button");
+
+      [...botoes].forEach((botao) => {
+        botao.addEventListener("mouseenter", (evento) => {
+          console.log(evento.type);
+        });
+        botao.addEventListener("mouseleave", (evento) => {
+          console.log(evento.type);
+        });
+        botao.addEventListener("mousemove", (evento) => {
+          console.log(evento.type);
+        });
+        botao.addEventListener("mousedown", (evento) => {
+          console.log(evento.type);
+        });
+        botao.addEventListener("mouseup", (evento) => {
+          console.log(evento.type);
+        });
+        botao.addEventListener("click", (evento) => {
+          console.log(evento.type);
+        });
+
+        botao.addEventListener("contextmenu", (evento) => {
+          evento.preventDefault(); //cancelar o evenot padrão no caso de abrir o menu ao clicar com o botão direito
+          switch (evento.target.id) {
+            case "pode":
+              console.log("😘");
+              break;
+            default:
+              defaultStatus;
+              console.log("Falei para não clicar!! 🤣");
+          }
+
+          console.log(evento);
+        });
+      });
+    </script>
+  </body>
+</html>
